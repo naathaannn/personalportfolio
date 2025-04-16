@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize hover effect for portfolio items
     initPortfolioHoverEffects();
 
-    // Event: Switch between section tabs
     sectionTabs.forEach(tab => {
         tab.addEventListener('click', () => {
             const sectionId = tab.getAttribute('data-section');
@@ -16,9 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Functions
     function initPortfolioHoverEffects() {
-        // Add mouseover event to portfolio items
         portfolioItems.forEach(item => {
             item.addEventListener('mouseenter', () => {
                 portfolioGrid.classList.add('has-hovered');
@@ -30,14 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function switchSection(sectionId, clickedTab) {
-        // Remove active class from all tabs and panels
         sectionTabs.forEach(tab => tab.classList.remove('active'));
         sectionPanels.forEach(panel => panel.classList.remove('active'));
 
-        // Add active class to the clicked tab
         clickedTab.classList.add('active');
 
-        // Add active class to the corresponding panel
         document.getElementById(sectionId).classList.add('active');
     }
 });
